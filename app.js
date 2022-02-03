@@ -60,9 +60,9 @@ function checkWinner() {
     //Final check for a tie - forced reset
     if (turn == 9 && winner == false) {
         //alert("The game is a TIE! Please click again to reset...");
-        tie++
+        tie++;
         extras[2].textContent = "Tie: " + tie;
-        extras[3].textContent = "The game is a TIE! \nPlease click again to reset..."
+        extras[3].textContent = "The game is a TIE! \nPlease click again to reset...";
     }
 }
 
@@ -70,15 +70,15 @@ function checkWinner() {
 function checkRowColumn(c1, c2, c3) {
     if (cells[c1].textContent == 'X' && cells[c2].textContent == 'X' && cells[c3].textContent == 'X') {
         //alert("PLAYER 1 IS THE WINNER! Good Game! Please click again to reset...")
-        player1++
-        extras[0].textContent = "Player 1: " + player1;
-        extras[3].textContent = "PLAYER 1 IS THE WINNER! Good Game! \nPlease click again to reset..."
+        player1++;
+        extras[0].textContent = "Player 1 (X): " + player1;
+        extras[3].textContent = "PLAYER 1 IS THE WINNER! Good Game! \nPlease click again to reset...";
         winner = true;
     } else if (cells[c1].textContent == 'O' && cells[c2].textContent == 'O' && cells[c3].textContent == 'O') {
         //alert("PLAYER 2 IS THE WINNER! Good Game! Please click again to reset...")
-        player2++
-        extras[1].textContent = "Player 2: " + player2;
-        extras[3].textContent = "PLAYER 2 IS THE WINNER! Good Game! \nPlease click again to reset..."
+        player2++;
+        extras[1].textContent = "Player 2 (O): " + player2;
+        extras[3].textContent = "PLAYER 2 IS THE WINNER! Good Game! \nPlease click again to reset...";
         winner = true;
     }
 }
@@ -88,7 +88,7 @@ function gameReset() {
     for (i=0; i<cells.length; i++) {
         cells[i].textContent = "";
     }
-    extras[3].textContent = "Game in progress..."
+    extras[3].textContent = "Game in progress, Player 1 starts...";
     turn = 1;
     isXorO = 1;
     winner = false;
